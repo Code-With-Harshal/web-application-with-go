@@ -3,5 +3,12 @@
 {{define "content"}}
   <div class="container">
     <h1>About Page</h1>
+    <p>This is about page</p>
+    <p>This is from template: {{index .StringMap "test"}}</p>
+    {{if ne (index .StringMap "remote_ip") ""}}
+    <p>Your Remote IP address is: {{index .StringMap "remote_ip"}}</p>
+      {{else}}
+      <p>To set remote ip address visit <a href="/">Home Page</a>.</p>
+      {{end}}
   </div>
 {{end}}
